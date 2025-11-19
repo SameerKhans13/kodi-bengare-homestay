@@ -130,7 +130,7 @@ const Contact: React.FC = () => {
         {/* Map Section */}
         <div className="rounded-3xl overflow-hidden shadow-xl border-4 border-white h-96 w-full reveal-on-scroll">
           <iframe 
-            src="https://maps.google.com/maps?q=CMWW%2BV42%2C%20Kodi%20Bengare-Hoode%20Rd%2C%20Kodi%20Bengare%2C%20Kodi%2C%20Karnataka%20576218&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=Kodi+Bengare+Homestay&t=&z=13&ie=UTF8&iwloc=&output=embed"
             width="100%" 
             height="100%" 
             style={{border:0}} 

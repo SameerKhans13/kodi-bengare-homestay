@@ -34,33 +34,28 @@ const Rooms: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <span className="text-brand-600 font-bold tracking-widest uppercase text-sm">Our Living Spaces</span>
+          <span className="text-brand-600 font-bold tracking-widest uppercase text-sm">Experience</span>
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mt-3 mb-6">
-            Accommodations
+            Our Services
           </h2>
           <div className="w-24 h-1 bg-brand-500 mx-auto rounded-full"></div>
           <p className="mt-6 text-slate-600 max-w-2xl mx-auto text-lg">
-             Spacious, clean, and designed for maximum relaxation. Ideal for families, couples, or small groups seeking a serene getaway.
+             Choose between a luxurious stay at our homestay or an adventurous deep sea safari.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {ROOMS.map((room) => (
             <div 
               key={room.id} 
-              className="room-card group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col"
+              className="room-card bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 flex flex-col"
             >
-              <div className="relative h-80 overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <img 
                   src={room.image} 
                   alt={room.title} 
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-light uppercase tracking-wider mb-1">From</p>
-                  <p className="text-2xl font-bold">{room.price.replace('Starts at ', '')}</p>
-                </div>
               </div>
               
               <div className="p-8 flex-1 flex flex-col relative">
@@ -89,13 +84,12 @@ const Rooms: React.FC = () => {
 
                 <button 
                   onClick={handleBookClick}
-                  className="w-full group/btn relative overflow-hidden bg-slate-900 text-white py-4 rounded-xl font-medium transition-all hover:shadow-lg active:scale-95"
+                  className="w-full bg-slate-900 text-white py-4 rounded-xl font-medium hover:bg-slate-800 transition-colors"
                 >
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    Book This Room
-                    <ChevronRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
+                  <span className="flex items-center justify-center gap-2">
+                    {room.title.includes('Safari') ? 'Book Boat Ride' : 'Book This Room'}
+                    <ChevronRight size={16} />
                   </span>
-                  <div className="absolute inset-0 bg-brand-600 transform scale-x-0 group-hover/btn:scale-x-100 transition-transform origin-left duration-300 ease-out"></div>
                 </button>
               </div>
             </div>

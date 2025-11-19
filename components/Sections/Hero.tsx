@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
         </div>
         
         <h1 className="text-5xl md:text-7xl lg:text-9xl font-serif font-bold mb-8 leading-none tracking-tight drop-shadow-2xl">
-          Kodi Bengare
+          Kodi Bengare Homestay
         </h1>
         
         <p className="text-xl md:text-3xl font-light max-w-2xl mx-auto mb-10 text-brand-50 drop-shadow-md font-serif italic">

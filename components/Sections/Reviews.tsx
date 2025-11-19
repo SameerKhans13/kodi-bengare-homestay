@@ -28,7 +28,7 @@ const Reviews: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm mb-4">
             <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" className="w-5 h-5" />
-            <span className="font-bold text-slate-700 text-sm">4.9/5 Rating</span>
+            <span className="font-bold text-slate-700 text-sm">5/5 Rating</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 mb-4">
             Guest Experiences

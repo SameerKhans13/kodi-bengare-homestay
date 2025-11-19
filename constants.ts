@@ -10,8 +10,8 @@ export const CONTACT_INFO = {
   phone: "+91 80507 94033",
   name: "Deepak",
   email: "kodibengarehomestay@gmail.com",
-  address: "CMWW+V42, Kodi Bengare-Hoode Rd, Kodi Bengare, Kodi, Karnataka 576218",
-  mapLink: "https://maps.google.com/?q=CMWW+V42,+Kodi+Bengare-Hoode+Rd,+Kodi+Bengare,+Kodi,+Karnataka+576218"
+  address: "CMWW+V42,Kodi bengare Homestay, Kodi Bengare-Hoode Rd, Kodi Bengare, Kodi, Karnataka 576218",
+  mapLink: "google.com/maps?um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=Kc0d9wgAl7w7MbxH4uQjXd39&daddr=CMWW%2BV42,+Kodi+Bengare-Hoode+Rd,+Kodi+Bengare,+Kodi,+Karnataka+576218"
 };
 
 export const NAV_LINKS = [
@@ -60,37 +60,27 @@ export const AMENITIES = [
 export const ROOMS = [
   {
     id: 1,
-    title: "Luxury Cottage Room",
-    price: "Starts at ₹2500",
-    // Specific Bedroom Image (Floral/Cozy)
-    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=2000&auto=format&fit=crop", 
+    title: "Luxury Homestay",
+    price: "",
+    image: "/exterior.jpg", 
     features: ["King Bed", "Private Balcony", "Garden View", "Window with Beach View"]
   },
   {
     id: 2,
-    title: "Family Suite",
-    price: "Starts at ₹4500",
-    // Specific Hall Image (Large/Spacious)
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2000&auto=format&fit=crop", 
-    features: ["2 Queen Beds", "Large Luxury Hall", "Kitchenette", "Ideal for Groups"]
-  },
-  {
-    id: 3,
-    title: "Standard Double",
-    price: "Starts at ₹1800",
-    // Specific Exterior Image
-    image: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=2000&auto=format&fit=crop", 
-    features: ["Queen Bed", "Compact & Cozy", "Work Desk", "Budget Friendly"]
+    title: "Deep Sea Safari",
+    price: "",
+    image: "/deepseasafaris.png", 
+    features: ["Boat Ride", "Fishing", "Sunset View", "Explore Backwaters"]
   }
 ];
 
 export const GALLERY_IMAGES = [
-  { src: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=2000&auto=format&fit=crop", alt: "Kodi Bengare Exterior" },
-  { src: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=2000&auto=format&fit=crop", alt: "Master Bedroom" },
-  { src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2000&auto=format&fit=crop", alt: "Spacious Hall" },
-  { src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2000&auto=format&fit=crop", alt: "Modern Blue Tiled Bathroom" },
-  { src: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=2000&auto=format&fit=crop", alt: "Beach View" },
-  { src: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=2000&auto=format&fit=crop", alt: "Living Area" }
+  { src: "/exterior.jpg", alt: "Kodi Bengare Exterior" },
+  { src: "/bedroom.jpg", alt: "Master Bedroom" },
+  { src: "/hall.jpg", alt: "Spacious Hall" },
+  { src: "/washroom.jpg", alt: "Modern Blue Tiled Bathroom" },
+  { src: "/view.jpg", alt: "Beach View" },
+  { src: "/extrior-full.jpg", alt: "Full Property View" }
 ];
 
 export const REVIEWS = [

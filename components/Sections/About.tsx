@@ -43,7 +43,7 @@ const About: React.FC = () => {
           <div ref={imgRef} className="w-full lg:w-1/2 relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 ease-out">
               <img 
-                src="https://images.unsplash.com/photo-1615880480595-f5f9b4fb530e?q=80&w=1000&auto=format&fit=crop" 
+                src="/exterior.jpg" 
                 alt="Kodi Bengare Homestay Courtyard" 
                 className="w-full h-[500px] object-cover"
               />
@@ -62,7 +62,7 @@ const About: React.FC = () => {
               <span className="text-brand-600 font-semibold uppercase tracking-wider text-sm">Our Story</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">
-              Experience Mahika <br/>
+              Experience Luxury in Delta Beach <br/>
               <span className="text-brand-500">Where Luxury Begins</span>
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
@@ -78,7 +78,7 @@ const About: React.FC = () => {
                 <p className="text-sm text-slate-500">Satisfaction Guaranteed</p>
               </div>
               <div className="bg-white p-4 rounded-xl shadow-md border-l-4 border-brand-400">
-                <h4 className="font-bold text-2xl text-brand-600">50m</h4>
+                <h4 className="font-bold text-2xl text-brand-600">10m</h4>
                 <p className="text-sm text-slate-500">From the Beach</p>
               </div>
             </div>
