@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <img
           ref={bgRef}
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop"
+          src="./hero-section-image.avif"
           alt="Kodi Bengare Delta Beach"
           className="w-full h-[120%] object-cover object-center opacity-90"
         />

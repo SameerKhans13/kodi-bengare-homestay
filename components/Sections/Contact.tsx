@@ -4,11 +4,55 @@ import { Phone, Mail, MapPin, User, CheckCircle } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+
+    const phoneNumber = "918050794033"; // Target WhatsApp number
+    const text = `Hi Kodi Bengare Homestay,
+    
+I would like to enquire about a stay.
+My name is ${formData.firstName} ${formData.lastName}.
+
+You can reach me at:
+Phone: ${formData.phone}
+Email: ${formData.email}
+
+Message:
+${formData.message}`;
+
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+
+    // Redirect to WhatsApp
+    window.open(whatsappUrl, '_blank');
+
+    setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            message: ''
+        });
+    }, 3000);
   };
 
   return (
@@ -84,27 +128,66 @@ const Contact: React.FC = () => {
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                    <div className="space-y-2">
                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">First Name</label>
-                     <input required type="text" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all" placeholder="John" />
+                     <input 
+                        required 
+                        type="text" 
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all" 
+                        placeholder="John" 
+                     />
                    </div>
                    <div className="space-y-2">
                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Last Name</label>
-                     <input type="text" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all" placeholder="Doe" />
+                     <input 
+                        type="text" 
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all" 
+                        placeholder="Doe" 
+                     />
                    </div>
                  </div>
 
                  <div className="space-y-2">
                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Email Address</label>
-                   <input required type="email" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all" placeholder="john@example.com" />
+                   <input 
+                        required 
+                        type="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all" 
+                        placeholder="john@example.com" 
+                   />
                  </div>
 
                  <div className="space-y-2">
                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Phone Number</label>
-                   <input required type="tel" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all" placeholder="+91 99999 99999" />
+                   <input 
+                        required 
+                        type="tel" 
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all" 
+                        placeholder="+91 99999 99999" 
+                   />
                  </div>
 
                  <div className="space-y-2">
                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Message</label>
-                   <textarea required rows={3} className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all resize-none" placeholder="I'm interested in booking..."></textarea>
+                   <textarea 
+                        required 
+                        rows={3} 
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition-all resize-none" 
+                        placeholder="I'm interested in booking..."
+                   ></textarea>
                  </div>
 
                  <div className="pt-2">
@@ -116,9 +199,9 @@ const Contact: React.FC = () => {
                      {isSubmitted ? (
                        <>
                         <CheckCircle size={20} />
-                        Sent Successfully
+                        Redirecting to WhatsApp...
                        </>
-                     ) : 'Send Message'}
+                     ) : 'Send via WhatsApp'}
                    </button>
                  </div>
                </form>

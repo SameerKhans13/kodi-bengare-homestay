@@ -1,5 +1,6 @@
 import React from 'react';
 import { CONTACT_INFO } from '../../constants';
+import { Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -14,9 +15,15 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="flex space-x-6">
-            <a href="#" className="text-brand-200 hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="text-brand-200 hover:text-white transition-colors">Terms</a>
-            <a href="#" className="text-brand-200 hover:text-white transition-colors">Sitemap</a>
+            <a 
+              href="https://www.instagram.com/kodibengrehomestay/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-brand-200 hover:text-white transition-colors flex items-center gap-2"
+            >
+              <Instagram size={20} />
+              <span>kodibengrehomestay</span>
+            </a>
           </div>
         </div>
         
