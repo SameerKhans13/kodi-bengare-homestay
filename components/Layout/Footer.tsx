@@ -29,7 +29,16 @@ const Footer: React.FC = () => {
         
         <div className="mt-8 border-t border-brand-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-brand-300">
           <p>&copy; {new Date().getFullYear()} Kodi Bengare Homestay. All rights reserved.</p>
-          <p className="mt-2 md:mt-0">Designed with ❤️ for Nature Lovers.</p>
+          <div className="mt-2 md:mt-0 flex items-center gap-2">
+            <span>Designed with ❤️ for Nature Lovers</span>
+            <span className="opacity-50">|</span>
+            <span className="group relative cursor-pointer">
+              <span className="bg-gradient-to-r from-brand-200 to-teal-200 bg-clip-text text-transparent font-bold hover:from-white hover:to-white transition-all duration-300">
+                Brought to life by Sam
+              </span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-brand-200 to-teal-200 transition-all duration-300 group-hover:w-full"></span>
+            </span>
+          </div>
         </div>
       </div>
     </footer>
